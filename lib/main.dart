@@ -43,6 +43,13 @@ class Home extends StatelessWidget {
 
               ),
             ),
+            SizedBox(
+              height: 20,
+              width: 200,
+              child: Divider(
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
