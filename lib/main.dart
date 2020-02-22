@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/widgets/info_card.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,7 +36,7 @@ class Home extends StatelessWidget {
             ),
             Text(
               'Passionate Developer',
-              style: TextStyle(
+              style: TextStyle(s
                   fontSize: 30.0,
                   color: Colors.blueGrey[200],
                   letterSpacing: 2.5,
@@ -73,24 +74,7 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.email,
-                  color: Colors.teal,
-                ),
-                title: Text(
-                  'fahim.tech.me@gmail.com',
-                  style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 20.0,
-                    fontFamily: 'Source Sans Pro',
-                  ),
-                ),
-              ),
-            ),
+
           ],
         ),
       ),
