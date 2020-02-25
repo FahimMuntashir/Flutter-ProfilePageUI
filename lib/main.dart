@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/widgets/info_card.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 
 const url = 'https://fahimmuntashir.github.io/';
 const email = 'fahim.tech.me@gmail.com';
@@ -55,40 +56,38 @@ class Home extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-
             InfoCard(
               text: phone,
               icon: Icons.phone,
-              onPressed: (){
+              onPressed: () {
                 print('fahim');
               },
-
             ),
             InfoCard(
               text: email,
               icon: Icons.email,
-              onPressed: (){
+              onPressed: () {
                 print('email');
               },
-
             ),
             InfoCard(
               text: url,
               icon: Icons.web,
-              onPressed: (){
-                print('web');
+              onPressed: () async {
+                if (await launcher.canLaunch(url)) {
+                  await launcher.launch(url);
+                } else {
+                  print('error');
+                }
               },
-
             ),
             InfoCard(
               text: location,
               icon: Icons.location_city,
-              onPressed: (){
+              onPressed: () {
                 print('location');
               },
-
             ),
-
           ],
         ),
       ),
