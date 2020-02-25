@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ui/widgets/info_card.dart';
 
+const url = 'https://fahimmuntashir.github.io/';
+const email = 'fahim.tech.me@gmail.com';
+const phone = '+880 847 784 74';
+const location = 'Dhaka, Bangladesh';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -36,7 +41,7 @@ class Home extends StatelessWidget {
             ),
             Text(
               'Passionate Developer',
-              style: TextStyle(s
+              style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.blueGrey[200],
                   letterSpacing: 2.5,
@@ -50,30 +55,24 @@ class Home extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.phone,
-                    color: Colors.teal,
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    '+8348388348',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ],
-              ),
+
+            InfoCard(
+              text: phone,
+              icon: Icons.phone,
+              onPressed: (){
+                print('fahim');
+              },
+
             ),
+            InfoCard(
+              text: email,
+              icon: Icons.email,
+              onPressed: (){
+                print('email');
+              },
+
+            ),
+
 
           ],
         ),
