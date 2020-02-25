@@ -72,7 +72,22 @@ class Home extends StatelessWidget {
               },
 
             ),
+            InfoCard(
+              text: url,
+              icon: Icons.web,
+              onPressed: (){
+                print('web');
+              },
 
+            ),
+            InfoCard(
+              text: location,
+              icon: Icons.location_city,
+              onPressed: (){
+                print('location');
+              },
+
+            ),
 
           ],
         ),
