@@ -59,15 +59,24 @@ class Home extends StatelessWidget {
             InfoCard(
               text: phone,
               icon: Icons.phone,
-              onPressed: () {
-                print('fahim');
+              onPressed: () async {
+                if (await launcher.canLaunch(url)) {
+                  await launcher.launch(url);
+                } else {
+                  print('error');
+                }
               },
             ),
             InfoCard(
               text: email,
               icon: Icons.email,
-              onPressed: () {
-                print('email');
+              onPressed: () async {
+                final emailAddress = 'mailto:$email';
+                if (await launcher.canLaunch(emailAddress)) {
+                  await launcher.launch(emailAddress);
+                } else {
+                  print('error email');
+                }
               },
             ),
             InfoCard(
