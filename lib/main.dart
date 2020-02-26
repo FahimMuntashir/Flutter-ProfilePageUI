@@ -19,6 +19,27 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+  void _showDialog(BuildContext context, {String title, String msg}){
+    final Dialog = AlertDialog (
+      title: Text(title),
+      content: Text(msg),
+      actions: <Widget>[
+        RaisedButton(
+          color: Colors.teal,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(
+            'Close',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        )
+      ],
+    );
+    showDialog(context: context, builder: (x) => Dialog);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +87,10 @@ class Home extends StatelessWidget {
                 if (await launcher.canLaunch(Phonecall)) {
                   await launcher.launch(Phonecall);
                 } else {
-                  print('error phone');
+                 _showDialog(context,
+                   title: 'Sorry',
+                   msg: 'please try again ',
+                 );
                 }
               },
             ),
@@ -78,7 +102,10 @@ class Home extends StatelessWidget {
                 if (await launcher.canLaunch(emailAddress)) {
                   await launcher.launch(emailAddress);
                 } else {
-                  print('error email');
+                  _showDialog(context,
+                    title: 'Sorry',
+                    msg: 'please try again ',
+                  );
                 }
               },
             ),
@@ -89,7 +116,10 @@ class Home extends StatelessWidget {
                 if (await launcher.canLaunch(url)) {
                   await launcher.launch(url);
                 } else {
-                  print('error');
+                  _showDialog(context,
+                    title: 'Sorry',
+                    msg: 'please try again ',
+                  );
                 }
               },
             ),
