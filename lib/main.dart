@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  void _showDialog(BuildContext context, {String title, String msg}){
-    final Dialog = AlertDialog (
+  void _showDialog(BuildContext context, {String title, String msg}) {
+    final Dialog = AlertDialog(
       title: Text(title),
       content: Text(msg),
       actions: <Widget>[
@@ -40,6 +40,7 @@ class Home extends StatelessWidget {
     );
     showDialog(context: context, builder: (x) => Dialog);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,16 +82,18 @@ class Home extends StatelessWidget {
               text: phone,
               icon: Icons.phone,
               onPressed: () async {
-                String removeSpaceFromPhoneNumber = phone.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
+                String removeSpaceFromPhoneNumber =
+                    phone.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
                 final phoneCall = 'tel:$removeSpaceFromPhoneNumber';
 
                 if (await launcher.canLaunch(phoneCall)) {
                   await launcher.launch(phoneCall);
                 } else {
-                 _showDialog(context,
-                   title: 'Sorry',
-                   msg: 'please try again ',
-                 );
+                  _showDialog(
+                    context,
+                    title: 'Sorry',
+                    msg: 'please try again ',
+                  );
                 }
               },
             ),
@@ -102,7 +105,8 @@ class Home extends StatelessWidget {
                 if (await launcher.canLaunch(emailAddress)) {
                   await launcher.launch(emailAddress);
                 } else {
-                  _showDialog(context,
+                  _showDialog(
+                    context,
                     title: 'Sorry',
                     msg: 'please try again ',
                   );
@@ -116,7 +120,8 @@ class Home extends StatelessWidget {
                 if (await launcher.canLaunch(url)) {
                   await launcher.launch(url);
                 } else {
-                  _showDialog(context,
+                  _showDialog(
+                    context,
                     title: 'Sorry',
                     msg: 'please try again ',
                   );
