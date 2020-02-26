@@ -60,10 +60,13 @@ class Home extends StatelessWidget {
               text: phone,
               icon: Icons.phone,
               onPressed: () async {
-                if (await launcher.canLaunch(url)) {
-                  await launcher.launch(url);
+                String removeSpaceFromPhoneNumber = phone.replaceAll(new RegExp(r"\s+\b|\b+\s"), "");
+                final Phonecall = 'tel:$removeSpaceFromPhoneNumber';
+
+                if (await launcher.canLaunch(Phonecall)) {
+                  await launcher.launch(Phonecall);
                 } else {
-                  print('error');
+                  print('error phone');
                 }
               },
             ),
