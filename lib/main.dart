@@ -81,11 +81,11 @@ class Home extends StatelessWidget {
               text: phone,
               icon: Icons.phone,
               onPressed: () async {
-                String removeSpaceFromPhoneNumber = phone.replaceAll(new RegExp(r"\s+\b|\b+\s"), "");
-                final Phonecall = 'tel:$removeSpaceFromPhoneNumber';
+                String removeSpaceFromPhoneNumber = phone.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
+                final phoneCall = 'tel:$removeSpaceFromPhoneNumber';
 
-                if (await launcher.canLaunch(Phonecall)) {
-                  await launcher.launch(Phonecall);
+                if (await launcher.canLaunch(phoneCall)) {
+                  await launcher.launch(phoneCall);
                 } else {
                  _showDialog(context,
                    title: 'Sorry',
