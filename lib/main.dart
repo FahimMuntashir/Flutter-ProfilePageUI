@@ -12,6 +12,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       home: Home(),
     );
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+
   void _showDialog(BuildContext context, {String title, String msg}) {
     final Dialog = AlertDialog(
       title: Text(title),
@@ -38,11 +40,12 @@ class Home extends StatelessWidget {
         )
       ],
     );
-    showDialog(context: context, builder: (x) => Dialog);
+    showDialog(context: context, builder: (x) =>  Dialog);
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.blueGrey[800],
       body: SafeArea(
@@ -63,7 +66,7 @@ class Home extends StatelessWidget {
               ),
             ),
             Text(
-              'Passionate Developer',
+              'Passionate Learner',
               style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.blueGrey[200],
